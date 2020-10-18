@@ -1,0 +1,30 @@
+@function encodecolor($string) {
+  @if type-of($string) == 'color' {
+    $hex: str-slice(ie-hex-str($string), 4);
+    $string: unquote("#{$hex}");
+  }
+  $string: '%23' + $string;
+  @return $string;
+}
+
+{{#shapes}}
+.{{base}} {
+  $color: encodecolor('currentColor');
+  background-image: url('{{{sprite}}}#{{{base}}}');
+  background-repeat: no-repeat;
+  background-position: 1rem center;
+  background-size: ({{width.inner}}/{{height.inner}})*1em ({{height.inner}}/10)*1rem;
+  transform: translate3d(0, 0, 0);
+}
+
+@mixin {{base}}($color: 'currentColor') {
+  $color: encodecolor($color);
+  background-image: url('{{{sprite}}}#{{{base}}}');
+  background-repeat: no-repeat;
+  background-size: ({{width.inner}}/{{height.inner}})*1em ({{height.inner}}/10)*1rem;
+  transform: translate3d(0, 0, 0);
+}
+
+{{/shapes}}
+
+

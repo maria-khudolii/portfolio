@@ -1,0 +1,168 @@
+
+@import 'reset.scss'; 
+@import 'variables.scss'; 
+
+body {
+	margin: 0;
+	background: $bg-color;
+	color: $text-color;
+}
+
+h1 {
+	font-family: $font; 
+	font-size: 18px;
+	color: $text-color;
+}
+
+.btn {
+	border: 2px solid $brand-color;
+	color: $brand-color;
+	background: none;
+	outline: none;
+}
+
+.box {
+	background: $bg-content;
+}
+.brand {
+	color: $brand-color;
+}
+.ua {
+	display: none;
+}
+.wrapper {
+	padding: $step; 
+}
+
+.info { 
+	flex-grow: 1; 
+	flex-basis: 50%;
+	&-text {
+		opacity: 0; 
+	} 
+}
+
+.hero {
+  background: #F5F5F5;
+  flex-grow: 1;
+  flex-basis: 50%;
+  display: flex;
+  align-items: center; }
+  .hero-text {
+    display: block;
+    width: 400px;
+    font-family: $font; 
+    font-weight: 900;
+    font-size: 80px;
+    color: $text-color;
+    transform: translateX(-40%); 
+ }
+
+.menu {
+	display: none; 
+}
+
+.heading {
+	position: fixed; 
+	width: 100%; 
+	height: $step; 
+	background: $bg-color;
+	top: 0; 
+	left: 0; 
+}
+
+.heading-content {
+  display: flex; 
+  justify-content: space-between;
+  height: 21px; 
+  margin: 43px 80px 21px 80px;
+}
+
+.btn-burger {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  cursor: pointer; 
+}
+
+.burger {
+     position: relative;
+     display: block;
+     width: 48px;
+     height: 31px;
+     margin: 0 54px;
+     border-top: 5px solid #000;
+     border-bottom: 5px solid #000;
+}
+.burger:before {
+     content: "";
+     position: absolute;
+     top: 8px;
+     left: 8px;
+     width: 100%;
+     border-top: 5px solid #000;
+}
+
+.links {
+	position: fixed; 
+	top: 0; 
+	right: 0; 
+	height: 100vh; 
+	display: flex; 
+	flex-direction: column;
+	justify-content: center;
+	margin: 0 28px;
+	.social-icon {
+		margin-bottom: 16px; 
+	} 
+}
+
+.info {
+  position: relative;
+  flex-grow: 1;
+  flex-basis: 50%; }
+  .info-text {
+    opacity: 0; }
+
+.info-text {
+  position: absolute;
+  top: 50%;
+  left: 160px;
+  transform: translateY(-50%);
+}
+
+header {
+	background: $bg-brand; 
+	height: calc(100vh-160px);
+	margin: 0 0 $step;
+	display: flex; 
+	&:hover {
+		.hero {
+		opacity: 0;
+		transition: 1s ease-out;  
+		}
+		.info {
+			&-text {
+			opacity: 1; 
+			}
+		}
+	}
+}
+
+
+.dark-theme {
+	background: $bg-color-dark;
+	.btn {
+		border: 2px solid $brand-color-dark;
+		color: $brand-color-dark;
+	}
+	.brand {
+		color: $brand-color-dark;
+	}
+	.en {
+		display: none;
+	}
+	.ua {
+		display: block;
+	}
+}

@@ -1,0 +1,17 @@
+$base-font-size-px: 16;
+$em: (1 / $base-font-size-px) + 0em;
+
+.symbol {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  fill: currentColor;
+}
+
+{{#shapes}}
+.{{base}} {
+  width: ({{width.inner}})*$em;
+  height: ({{height.inner}})*$em;
+}
+
+{{/shapes}}

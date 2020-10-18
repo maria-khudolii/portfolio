@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
+<!--  <script src="https://rawgit.com/jonathantneal/svg4everybody/master/dist/svg4everybody.js"></script>-->
+<!--  <script>svg4everybody();</script>-->
+  <title>SVG &lt;symbol&gt; sprite preview | svg-sprite</title>
+  <style>
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: #fafafa;
+      color: #444;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1em;
+      line-height: 1.4;
+    }
+
+    h1, h2, h3 {
+      margin-top: 0;
+      margin-bottom: .5em;
+      line-height: 1;
+    }
+
+    h2, h3 {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    footer p {
+      font-size: .7em;
+    }
+
+    footer a {
+      margin-left: 0;
+      color: #0f7595;
+    }
+
+    textarea {
+      position: absolute;
+      left: -100vw;
+    }
+
+    .container {
+      padding: 2em 3em 0;
+      border-top: 1px solid #eee;
+    }
+
+    .iconset {
+      font-size: 0;
+    }
+
+    .iconset__item {
+      display: inline-block;
+      position: relative;
+      box-sizing: border-box;
+      width: calc(25% - 20px);
+      min-width: 210px;
+      margin: 8px;
+      padding: 1em;
+      border: 1px solid #ccc;
+      background-color: #fff;
+      font-size: 16px;
+      text-align: center;
+    }
+
+    .icon {
+      width: 100%;
+      margin-bottom: 16px;
+    }
+
+    .icon__box {
+      display: inline-block;
+      width: 100%;
+      padding: 2em 0;
+      border: 1px solid #ccc;
+      background: #ddd url("data:image/gif;base64,R0lGODlhDAAMAIAAAMzMzP///yH/C1hNUCBEYXRhWE1QPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNS4wLWMwNjEgNjQuMTQwOTQ5LCAyMDEwLzEyLzA3LTEwOjU3OjAxICAgICAgICAiPiA8cmRmOlJERiB4bWxuczpyZGY9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkvMDIvMjItcmRmLXN5bnRheC1ucyMiPiA8cmRmOkRlc2NyaXB0aW9uIHJkZjphYm91dD0iIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1wOkNyZWF0b3JUb29sPSJBZG9iZSBQaG90b3Nob3AgQ1M1LjEgV2luZG93cyIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDozQjk4OTI0MUY5NTIxMUUyQkJDMEI5NEFEM0Y1QTYwQyIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDozQjk4OTI0MkY5NTIxMUUyQkJDMEI5NEFEM0Y1QTYwQyI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjNCOTg5MjNGRjk1MjExRTJCQkMwQjk0QUQzRjVBNjBDIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOjNCOTg5MjQwRjk1MjExRTJCQkMwQjk0QUQzRjVBNjBDIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+Af/+/fz7+vn49/b19PPy8fDv7u3s6+rp6Ofm5eTj4uHg397d3Nva2djX1tXU09LR0M/OzczLysnIx8bFxMPCwcC/vr28u7q5uLe2tbSzsrGwr66trKuqqainpqWko6KhoJ+enZybmpmYl5aVlJOSkZCPjo2Mi4qJiIeGhYSDgoGAf359fHt6eXh3dnV0c3JxcG9ubWxramloZ2ZlZGNiYWBfXl1cW1pZWFdWVVRTUlFQT05NTEtKSUhHRkVEQ0JBQD8+PTw7Ojk4NzY1NDMyMTAvLi0sKyopKCcmJSQjIiEgHx4dHBsaGRgXFhUUExIREA8ODQwLCgkIBwYFBAMCAQAAIfkEAAAAAAAsAAAAAAwADAAAAhaEH6mHmmzcgzJAUG/NVGrfOZ8YLlABADs=") top left repeat;
+    }
+
+    .snippets {
+      display: inline-block;
+      font-size: 0;
+    }
+
+    .snippets__item {
+      display: inline-block;
+      width: 100%;
+      text-align: center;
+    }
+
+    .snippets__header {
+      display: inline-block;
+      width: calc(100% - 54px);
+      padding-left: 16px;
+      transition: all .2s;
+      background: linear-gradient(rgba(80, 80, 80, 0) 10%, rgba(80, 80, 80, 0.3), rgba(80, 80, 80, 1)) no-repeat -1px;
+      background-color: #eee;
+      background-position: -1px 0;
+      background-size: 1px;
+      font-size: 16px;
+      line-height: 32px;
+      text-align: left;
+      cursor: pointer;
+    }
+
+    .snippets__header::before {
+      content: attr(data-code);
+      position: absolute;
+      z-index: 1;
+      top: 0;
+      right: 50%;
+      box-sizing: border-box;
+      width: auto;
+      min-width: 100%;
+      padding: 16px;
+      transform: translate(50%, -1px);
+      border-radius: 2px;
+      background-repeat: inherit;
+      background-position: inherit;
+      background-image: inherit;
+      background-attachment: inherit;
+      background-color: transparent;
+      background-size: 102% 90em;
+      color: transparent;
+      font-size: 14px;
+      font-weight: normal;
+      line-height: 1;
+      text-shadow: inherit;
+      white-space: pre;
+      pointer-events: none;
+    }
+
+    .snippets__header:hover {
+      background-position: -1px 100%;
+      box-shadow: 0px 3px 7px -3px rgba(0, 0, 0, 0.75);
+    }
+
+    .snippets__header:hover::before {
+      box-shadow: 0px 6px 14px -6px rgba(0, 0, 0, 0.75);
+      color: #fff;
+    }
+
+    .btn--tooltipped {
+      display: inline-block;
+      position: relative;
+      top: 0;
+      right: 0;
+      width: 32px;
+      height: 32px;
+      border-width: 0;
+      border-radius: 2px;
+      background-color: #ccc;
+      font-size: 12px;
+      vertical-align: top;
+      cursor: pointer;
+    }
+
+    .btn--tooltipped::after, .btn--tooltipped::before {
+      content: '';
+      display: inline-block;
+      position: absolute;
+      animation: tooltips-b 1s forwards;
+    }
+
+    .btn--tooltipped:hover::after,
+    .btn--tooltipped.isCopied:hover::after {
+      content: attr(aria-label);
+      z-index: 1000;
+      top: 100%;
+      right: 50%;
+      margin-top: 8px;
+      padding: 8px;
+      transform: translateX(50%);
+      border-radius: 2px;
+      background-color: #444;
+      color: #fff;
+      text-align: center;
+      white-space: nowrap;
+      pointer-events: none;
+    }
+
+    .btn--tooltipped.isCopied:hover::after {
+      content: attr(data-copied-hint);
+    }
+
+    .btn--tooltipped:hover::before {
+      top: 24px;
+      right: 9px;
+      left: auto;
+      border: 8px solid transparent;
+      border-bottom-color: #444;
+    }
+  </style>
+
+  <style type="text/css">
+    .symbol {
+      display: inline-block;
+      fill: currentColor;
+      font-size: 5rem;
+    }
+
+    {{#shapes}}
+    .{{base}} {
+      width: calc({{width.inner}} / 16 * 1em);
+      height: calc({{height.inner}} / 16 * 1em);
+    }
+
+    {{/shapes}}
+  </style>
+
+</head>
+<body>
+
+<div class="container">
+  <div>
+    <h1>SVG <code>&lt;symbol&gt;</code> sprite preview</h1>
+    <p>This preview features two methods of using the generated sprite in conjunction with inline SVG. Please have a
+      look
+      at the HTML source for further details and be aware of the following constraints:</p>
+    <ul>
+      <li>Your browser has to <a href="http://caniuse.com/#feat=svg-html5" target="_blank">support inline SVG</a> for
+        these techniques to work.
+      </li>
+      <li>Please
+        <a href="https://github.com/jkphl/svg-sprite/blob/master/docs/configuration.md#defs--symbol-mode"
+           target="_blank">
+          see the documentation</a>
+        for details on how to create such an embeddable sprite.
+      </li>
+      <li>Internet Explorer up to version 11 doesn't support external sprites for use with inline SVG. For IE 9-11, you
+        may polyfill this functionality with <a href="https://github.com/jonathantneal/svg4everybody" target="_blank">SVG
+          for Everybody</a>.
+      </li>
+    </ul>
+  </div>
+
+  <div class="iconset">
+
+    <!--
+
+    B) Inline SVG with external sprite (IE 9-11 with polyfill only)
+    ====================================================================================================
+    These SVG images make use of an URL + fragment identifiers (IDs) and refer to the regular external
+    SVG sprite. They may be styled via CSS. (IE 9-11 with polyfill only)
+
+    -->
+
+    {{#shapes}}
+    <!-- Icon sample start -->
+    <div title="{{name}}" class="iconset__item">
+      <h2>{{name}}</h2>
+
+      <div class="icon">
+        <div class="icon__box">
+          <svg
+            class="{{#selector.dimensions}}{{#last}}symbol {{#classname}}{{raw}}{{/classname}}{{/last}}{{/selector.dimensions}}">
+            <use xlink:href="./{{{example}}}#{{name}}"></use>
+          </svg>
+        </div>
+      </div>
+
+
+      <div class="snippets">
+
+        <!-- Ruby helper snippets -->
+        <div class="snippets__item">
+          <h3 class="snippets__header"
+              data-code="= svg_icon_tag '{{{example}}}', '{{#selector.dimensions}}{{#last}}{{#classname}}{{raw}}{{/classname}}{{/last}}{{/selector.dimensions}}'">
+            Ruby helper snippets
+          </h3>
+
+          <button aria-label="Copy to clipboard"
+                  class="btn--tooltipped"
+                  data-copied-hint="Copied!"
+                  onClick="CopyToClipboard(this)">
+
+            <svg height="16"
+                 version="1.1"
+                 viewBox="0 0 14 16"
+                 width="14">
+              <path
+                d="M2 13h4v1H2v-1zm5-6H2v1h5V7zm2 3V8l-3 3 3 3v-2h5v-2H9zM4.5 9H2v1h2.5V9zM2 12h2.5v-1H2v1zm9 1h1v2c-.02.28-.11.52-.3.7-.19.18-.42.28-.7.3H1c-.55 0-1-.45-1-1V4c0-.55.45-1 1-1h3c0-1.11.89-2 2-2 1.11 0 2 .89 2 2h3c.55 0 1 .45 1 1v5h-1V6H1v9h10v-2zM2 5h8c0-.55-.45-1-1-1H8c-.55 0-1-.45-1-1s-.45-1-1-1-1 .45-1 1-.45 1-1 1H3c-.55 0-1 .45-1 1z">
+              </path>
+            </svg>
+          </button>
+
+        </div>
+        <!-- Ruby helper snippets -->
+
+        <!-- HTML snippets -->
+        <div class="snippets__item">
+          <h3 class="snippets__header"
+              data-code="&lt;svg class=&quot;{{#selector.dimensions}}{{#last}}symbol {{#classname}}{{raw}}{{/classname}}{{/last}}{{/selector.dimensions}}&quot;
+  &lt;use xlink:href=&quot;{{example}}#{{name}}&quot;&gt;&lt;/use&gt;
+&lt;/svg&gt;">
+            HTML snippets
+          </h3>
+
+          <button aria-label="Copy to clipboard" class="btn--tooltipped" data-copied-hint="Copied!"
+                  onClick="CopyToClipboard(this)">
+            <svg height="16"
+                 version="1.1" viewBox="0 0 14 16"
+                 width="14">
+              <path
+                d="M2 13h4v1H2v-1zm5-6H2v1h5V7zm2 3V8l-3 3 3 3v-2h5v-2H9zM4.5 9H2v1h2.5V9zM2 12h2.5v-1H2v1zm9 1h1v2c-.02.28-.11.52-.3.7-.19.18-.42.28-.7.3H1c-.55 0-1-.45-1-1V4c0-.55.45-1 1-1h3c0-1.11.89-2 2-2 1.11 0 2 .89 2 2h3c.55 0 1 .45 1 1v5h-1V6H1v9h10v-2zM2 5h8c0-.55-.45-1-1-1H8c-.55 0-1-.45-1-1s-.45-1-1-1-1 .45-1 1-.45 1-1 1H3c-.55 0-1 .45-1 1z">
+              </path>
+            </svg>
+          </button>
+        </div>
+        <!-- HTML snippets -->
+      </div>
+    </div>
+    <!-- Icon sample end -->
+    {{/shapes}}
+
+  </div>
+
+  <div>
+    <p>Generated at {{date}} by <a href="https://github.com/jkphl/svg-sprite" target="_blank">svg-sprite</a>.</p>
+  </div>
+
+</div>
+
+<textarea id="t"></textarea>
+
+<script type="text/javascript">
+  function CopyToClipboard(el) {
+    var selector = document.querySelector('#t');
+    selector.value = el.previousElementSibling.getAttribute('data-code');
+    selector.select();
+    document.execCommand('copy');
+    el.classList.toggle('isCopied');
+
+    function toggle(el) {
+      return setTimeout(function () {
+        el.classList.toggle('isCopied')
+      }, 1000);
+    }
+
+    toggle(el);
+  }
+
+  //  var code = document.querySelectorAll('pre');
+  //  code.forEach( function (elem) {
+  //    var str = elem.innerText;
+  //
+  //    elem.setAttribute('data-code', str);
+  //  });
+</script>
+
+</body>
+</html>
