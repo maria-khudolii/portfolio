@@ -34,24 +34,12 @@ body {
 	padding: $step; 
 }
 
-/*.hero {
-  background: #F5F5F5;
-  flex-grow: 1;
-  flex-basis: 50%;
-  display: flex;
-  align-items: center; }
-  .hero-text {
-    display: block;
-    width: 400px;
-    font-family: $font; 
-    font-weight: 900;
-    font-size: 80px;
-    color: $text-color;
-    transform: translateX(-40%); 
- }*/
-
-.menu {
-	display: none; 
+header {
+	background: $bg-brand; 
+	height: calc(100vh-160px);
+	margin: 0 0 $step;
+	display: flex;
+	overflow:hidden;
 }
 
 .heading {
@@ -61,6 +49,7 @@ body {
 	background: $bg-color;
 	top: 0; 
 	left: 0; 
+	z-index: 50; 
 }
 
 .heading-content {
@@ -70,59 +59,35 @@ body {
   margin: 43px 80px 21px 80px;
 }
 
-.btn-burger {
-  position: fixed;
-  top: 50%;
-  left: 0;
-  cursor: pointer; 
-}
-
-.burger {
-     position: relative;
-     display: block;
-     width: 48px;
-     height: 31px;
-     margin: 0 54px;
-     border-top: 5px solid #75715e;
-     border-bottom: 5px solid #75715e;
-}
-.burger:before {
-     content: "";
-     position: absolute;
-     top: 8px;
-     left: 8px;
-     width: 100%;
-     border-top: 5px solid #75715e;
-}
-
-.links {
-	position: fixed; 
-	top: 0; 
-	right: 0; 
-	height: 100vh; 
-	display: flex; 
-	flex-direction: column;
-	justify-content: center;
-	margin: 0 28px;
-	.social-icon {
-		margin-bottom: 16px; 
-	} 
-}
+.hero {
+  background: #F5F5F5;
+  flex-grow: 1;
+  flex-basis: 50%;
+  display: flex;
+  align-items: center;
+  transition: transform 3s; }
+  .welcome-text {
+    display: block;
+    font-family: $font; 
+    font-weight: 900;
+    font-size: 100px;
+    color: $text-color;
+    transform: translateX(-50%); 
+ }
 
 .info { 
 	position: relative;
 	flex-grow: 1; 
-	flex-basis: 50%;}
-	.info-text {
-		opacity: 0; 
-	} 
+	flex-basis: 50%;
+ }
 
 .info-text {
   position: absolute;
   width: 600px;
-  top: 50%;
+  bottom: 0;
   left: 160px;
-  transform: translateY(-50%);
+  opacity: 0;
+  transition: 3s;
 }
 
 date {
@@ -146,25 +111,144 @@ date {
 	color: $text-color;
 }
 
-header {
-	background: $bg-brand; 
-	height: calc(100vh-160px);
-	margin: 0 0 $step;
-	display: flex; 
-	&:hover {
-		.hero {
-		opacity: 0;
-		transition: 1s ease-out;  
-		}
-		.info {
-			&-text {
-			opacity: 1; 
-			}
-		}
-	}
+header:hover .hero {
+	transform: translate(150%);
+	transition: transform 3s ease-in; 
 }
 
+header:hover .info {
+	transform: opacity(1);
+	transition: transform 3s;
+}
 
+header:hover .info-text {
+	opacity: 1; 
+	transform: translateY(-80%);
+	transition: transform 5s ease-in 5s, opacity 5s delay 5s;
+}
+ 
+/*hero
+.hero {
+  background: #F5F5F5;
+  flex-grow: 1;
+  flex-basis: 50%;
+  display: flex;
+  align-items: center; }
+  .hero-text {
+    display: block;
+    font-family: $font; 
+    font-weight: 900;
+    font-size: 100px;
+    color: $text-color;
+    transform: translateX(-50%); 
+ }
+
+.info { 
+	position: relative;
+	flex-grow: 1; 
+	flex-basis: 50%;}
+
+.info-text {
+  position: absolute;
+  width: 600px;
+  top: 50%;
+  left: 160px;
+  transform: translateY(-50%);
+  display: none;
+}
+
+date {
+	font-family: $font; 
+	font-style: italic;
+	font-size: 18px;
+	color: $brand-color;
+}
+
+.position {
+	font-family: $font; 
+	font-weight: bold;
+	font-size: 32px;
+	color: #000;
+	margin-bottom: 32px;
+}
+
+.description {
+	font-family: $font; 
+	font-size: 32px;
+	color: $text-color;
+}*/
+
+/*burger-menu*/
+.menu {
+	display: none; 
+}
+
+.btn-burger {
+  position: fixed;
+  top: 50%;
+  left: 0;
+  cursor: pointer; 
+  z-index: 50;
+}
+
+.burger {
+     position: relative;
+     display: block;
+     width: 48px;
+     height: 31px;
+     margin: 0 54px;
+     border-top: 5px solid $brand-color;
+     border-bottom: 5px solid $brand-color;
+}
+.burger:before {
+     content: "";
+     position: absolute;
+     top: 8px;
+     left: 8px;
+     width: 100%;
+     border-top: 5px solid $brand-color;
+}
+
+/*social links*/
+.links {
+	position: fixed; 
+	top: 0; 
+	right: 0; 
+	height: 100vh; 
+	display: flex; 
+	flex-direction: column;
+	justify-content: center;
+	margin: 0 28px;
+	.social-icon {
+		margin-bottom: 16px; 
+	} 
+}
+
+/*parallax image*/
+.parallax {
+	background-image: url(../img/comp_img.png);
+    height: 500px;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.skills {
+	background: $bg-content;
+	margin: 80px 0;
+	padding: 80px;
+}
+
+.section-title {
+	font-family: $font;
+	font-size: 80px;
+	font-weight: bold;
+	text-transform: uppercase; 
+	color: $text-color;
+}
+
+/*dark-theme*/
 .dark-theme {
 	background: $bg-color-dark;
 	.btn {
@@ -181,3 +265,4 @@ header {
 		display: block;
 	}
 }
+
