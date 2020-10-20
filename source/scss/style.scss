@@ -126,57 +126,6 @@ header:hover .info-text {
 	transform: translateY(-80%);
 	transition: transform 5s ease-in 5s, opacity 5s delay 5s;
 }
- 
-/*hero
-.hero {
-  background: #F5F5F5;
-  flex-grow: 1;
-  flex-basis: 50%;
-  display: flex;
-  align-items: center; }
-  .hero-text {
-    display: block;
-    font-family: $font; 
-    font-weight: 900;
-    font-size: 100px;
-    color: $text-color;
-    transform: translateX(-50%); 
- }
-
-.info { 
-	position: relative;
-	flex-grow: 1; 
-	flex-basis: 50%;}
-
-.info-text {
-  position: absolute;
-  width: 600px;
-  top: 50%;
-  left: 160px;
-  transform: translateY(-50%);
-  display: none;
-}
-
-date {
-	font-family: $font; 
-	font-style: italic;
-	font-size: 18px;
-	color: $brand-color;
-}
-
-.position {
-	font-family: $font; 
-	font-weight: bold;
-	font-size: 32px;
-	color: #000;
-	margin-bottom: 32px;
-}
-
-.description {
-	font-family: $font; 
-	font-size: 32px;
-	color: $text-color;
-}*/
 
 /*burger-menu*/
 .menu {
