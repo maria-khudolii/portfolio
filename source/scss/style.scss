@@ -113,17 +113,12 @@ date {
 
 header:hover .hero {
 	transform: translate(150%);
-	transition: transform 3s ease-in; 
-}
-
-header:hover .info {
-	transform: opacity(1);
-	transition: transform 3s;
+	transition: transform 2s ease-in; 
 }
 
 header:hover .info-text {
 	opacity: 1; 
-	transform: translateY(-80%);
+	transform: translateY(-150%);
 	transition: transform 5s ease-in 5s, opacity 5s delay 5s;
 }
 
@@ -170,7 +165,13 @@ header:hover .info-text {
 	margin: 0 28px;
 	.social-icon {
 		margin-bottom: 16px; 
+		transition: transform 1s;
 	} 
+}
+
+.social-icon:hover {
+	transform: rotate(360deg);
+	transition: 1s;
 }
 
 /*parallax image*/
@@ -183,10 +184,13 @@ header:hover .info-text {
     background-size: cover;
 }
 
-.skills {
+/*skills*/
+.skills-set{
 	background: $bg-content;
 	margin: 80px 0;
 	padding: 80px;
+	display: flex;
+	flex-direction: column; 	
 }
 
 .section-title {
@@ -195,7 +199,51 @@ header:hover .info-text {
 	font-weight: bold;
 	text-transform: uppercase; 
 	color: $text-color;
+	margin-bottom: 32px;
 }
+
+.skill-text {
+	font-family: $font;
+	font-size: 32px;
+}
+
+.progress {
+	margin-bottom: 32px;
+}
+
+.progress-bar {
+	display: flex;
+	position: relative;
+}
+
+.skill-dot {
+	position: absolute;
+	left: 520px;
+	top: 25%;
+	width: 14px;
+	height: 14px;
+	border-radius: 50%; 
+	background: $brand-color;
+}
+
+.skill-css {
+	position: absolute;
+	background: $brand-color;
+	border-radius: 7px;
+	left: 520px;
+	top: 25%;
+	height: 14px;
+	width: 90%;
+	opacity: 0;
+	transition: transform 3s;
+}
+
+.skills-set:hover .skill-css {
+	opacity: 1;
+	transition: opacity 3s;
+}
+
+
 
 /*dark-theme*/
 .dark-theme {

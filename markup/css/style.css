@@ -149,67 +149,13 @@ date {
 
 header:hover .hero {
   transform: translate(150%);
-  transition: transform 3s ease-in; }
-
-header:hover .info {
-  transform: opacity(1);
-  transition: transform 3s; }
+  transition: transform 2s ease-in; }
 
 header:hover .info-text {
   opacity: 1;
-  transform: translateY(-80%);
+  transform: translateY(-150%);
   transition: transform 5s ease-in 5s, opacity 5s delay 5s; }
 
-/*hero
-.hero {
-  background: #F5F5F5;
-  flex-grow: 1;
-  flex-basis: 50%;
-  display: flex;
-  align-items: center; }
-  .hero-text {
-    display: block;
-    font-family: $font; 
-    font-weight: 900;
-    font-size: 100px;
-    color: $text-color;
-    transform: translateX(-50%); 
- }
-
-.info { 
-	position: relative;
-	flex-grow: 1; 
-	flex-basis: 50%;}
-
-.info-text {
-  position: absolute;
-  width: 600px;
-  top: 50%;
-  left: 160px;
-  transform: translateY(-50%);
-  display: none;
-}
-
-date {
-	font-family: $font; 
-	font-style: italic;
-	font-size: 18px;
-	color: $brand-color;
-}
-
-.position {
-	font-family: $font; 
-	font-weight: bold;
-	font-size: 32px;
-	color: #000;
-	margin-bottom: 32px;
-}
-
-.description {
-	font-family: $font; 
-	font-size: 32px;
-	color: $text-color;
-}*/
 /*burger-menu*/
 .menu {
   display: none; }
@@ -249,7 +195,12 @@ date {
   justify-content: center;
   margin: 0 28px; }
   .links .social-icon {
-    margin-bottom: 16px; }
+    margin-bottom: 16px;
+    transition: transform 1s; }
+
+.social-icon:hover {
+  transform: rotate(360deg);
+  transition: 1s; }
 
 /*parallax image*/
 .parallax {
@@ -260,17 +211,56 @@ date {
   background-repeat: no-repeat;
   background-size: cover; }
 
-.skills {
+/*skills*/
+.skills-set {
   background: #F5F5F5;
   margin: 80px 0;
-  padding: 80px; }
+  padding: 80px;
+  display: flex;
+  flex-direction: column; }
 
 .section-title {
   font-family: "Roboto", sans-serif;
   font-size: 80px;
   font-weight: bold;
   text-transform: uppercase;
-  color: #272822; }
+  color: #272822;
+  margin-bottom: 32px; }
+
+.skill-text {
+  font-family: "Roboto", sans-serif;
+  font-size: 32px; }
+
+.progress {
+  margin-bottom: 32px; }
+
+.progress-bar {
+  display: flex;
+  position: relative; }
+
+.skill-dot {
+  position: absolute;
+  left: 520px;
+  top: 25%;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #F92672; }
+
+.skill-css {
+  position: absolute;
+  background: #F92672;
+  border-radius: 7px;
+  left: 520px;
+  top: 25%;
+  height: 14px;
+  width: 90%;
+  opacity: 0;
+  transition: transform 3s; }
+
+.skills-set:hover .skill-css {
+  opacity: 1;
+  transition: opacity 3s; }
 
 /*dark-theme*/
 .dark-theme {
