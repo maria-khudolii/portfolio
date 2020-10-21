@@ -190,7 +190,7 @@ header:hover .info-text {
 	margin: 80px 0;
 	padding: 80px;
 	display: flex;
-	flex-direction: column; 	
+	flex-direction: column; 
 }
 
 .section-title {
@@ -205,42 +205,196 @@ header:hover .info-text {
 .skill-text {
 	font-family: $font;
 	font-size: 32px;
+	color: $text-color;
+	min-width: 400px; 
 }
 
 .progress {
 	margin-bottom: 32px;
+	display: flex; 
+	width: 100%;
 }
 
-.progress-bar {
+.progressbar {
 	display: flex;
-	position: relative;
+	align-items: center;
+	flex-grow: 1;
 }
 
-.skill-dot {
-	position: absolute;
-	left: 520px;
-	top: 25%;
+.progressbar-dot {
+	justify-content: flex-start;
 	width: 14px;
 	height: 14px;
 	border-radius: 50%; 
 	background: $brand-color;
+	z-index: 5;
 }
 
-.skill-css {
-	position: absolute;
+.progressbar-1 {
 	background: $brand-color;
+	color: $text-color;
 	border-radius: 7px;
-	left: 520px;
-	top: 25%;
+	align-items: center;
+	margin-left: -14px;
+	justify-content: flex-start;
+	height: 14px;
+	width: 10%;
+	opacity: 0;
+	transition: transform 3s;
+}
+
+.progressbar-2 {
+	background: $brand-color;
+	color: $text-color;
+	border-radius: 7px;
+	align-items: center;
+	margin-left: -14px;
+	justify-content: flex-start;
+	height: 14px;
+	width: 20%;
+	opacity: 0;
+	transition: transform 3s;
+}
+
+.progressbar-3 {
+	background: $brand-color;
+	color: $text-color;
+	border-radius: 7px;
+	align-items: center;
+	margin-left: -14px;
+	justify-content: flex-start;
+	height: 14px;
+	width: 30%;
+	opacity: 0;
+	transition: transform 3s;
+}
+
+.progressbar-4 {
+	background: $brand-color;
+	color: $text-color;
+	border-radius: 7px;
+	align-items: center;
+	margin-left: -14px;
+	justify-content: flex-start;
+	height: 14px;
+	width: 40%;
+	opacity: 0;
+	transition: transform 3s;
+}
+
+.progressbar-5 {
+	background: $brand-color;
+	color: $text-color;
+	border-radius: 7px;
+	align-items: center;
+	margin-left: -14px;
+	justify-content: flex-start;
+	height: 14px;
+	width: 50%;
+	opacity: 0;
+	transition: transform 3s;
+}
+
+.progressbar-6 {
+	background: $brand-color;
+	color: $text-color;
+	border-radius: 7px;
+	align-items: center;
+	margin-left: -14px;
+	justify-content: flex-start;
+	height: 14px;
+	width: 60%;
+	opacity: 0;
+	transition: transform 3s;
+}
+
+.progressbar-7 {
+	background: $brand-color;
+	color: $text-color;
+	border-radius: 7px;
+	align-items: center;
+	margin-left: -14px;
+	justify-content: flex-start;
+	height: 14px;
+	width: 70%;
+	opacity: 0;
+	transition: transform 3s;
+}
+
+.progressbar-8 {
+	background: $brand-color;
+	color: $text-color;
+	border-radius: 7px;
+	align-items: center;
+	margin-left: -14px;
+	justify-content: flex-start;
+	height: 14px;
+	width: 80%;
+	opacity: 0;
+	transition: transform 3s;
+}
+
+.progressbar-9 {
+	background: $brand-color;
+	color: $text-color;
+	border-radius: 7px;
+	align-items: center;
+	margin-left: -14px;
+	justify-content: flex-start;
 	height: 14px;
 	width: 90%;
 	opacity: 0;
 	transition: transform 3s;
 }
 
-.skills-set:hover .skill-css {
+.skill-grade {
+	font-family: $font;
+	font-size: 32px;
+	color: $text-color;
+	justify-content: flex-end;
+	opacity: 0;
+}
+
+.skills-set:hover .skill-grade {
 	opacity: 1;
-	transition: opacity 3s;
+	transition: opacity 3s; 
+}
+
+.skills-set:hover .progressbar-1 {
+	opacity: 1;
+	transition: opacity 3s; 
+}
+.skills-set:hover .progressbar-2 {
+	opacity: 1;
+	transition: opacity 3s; 
+}
+.skills-set:hover .progressbar-3 {
+	opacity: 1;
+	transition: opacity 3s; 
+}
+.skills-set:hover .progressbar-4 {
+	opacity: 1;
+	transition: opacity 3s; 
+}
+.skills-set:hover .progressbar-5 {
+	opacity: 1;
+	transition: opacity 3s; 
+}
+.skills-set:hover .progressbar-6 {
+	opacity: 1;
+	transition: opacity 3s; 
+}
+.skills-set:hover .progressbar-7 {
+	opacity: 1;
+	transition: opacity 3s; 
+}
+.skills-set:hover .progressbar-8 {
+	opacity: 1;
+	transition: opacity 3s; 
+}
+.skills-set:hover .progressbar-9 {
+	opacity: 1;
+	transition: opacity 3s; 
 }
 
 

@@ -229,36 +229,180 @@ header:hover .info-text {
 
 .skill-text {
   font-family: "Roboto", sans-serif;
-  font-size: 32px; }
+  font-size: 32px;
+  color: #272822;
+  min-width: 400px; }
 
 .progress {
-  margin-bottom: 32px; }
-
-.progress-bar {
+  margin-bottom: 32px;
   display: flex;
-  position: relative; }
+  width: 100%; }
 
-.skill-dot {
-  position: absolute;
-  left: 520px;
-  top: 25%;
+.progressbar {
+  display: flex;
+  align-items: center;
+  flex-grow: 1; }
+
+.progressbar-dot {
+  justify-content: flex-start;
   width: 14px;
   height: 14px;
   border-radius: 50%;
-  background: #F92672; }
-
-.skill-css {
-  position: absolute;
   background: #F92672;
+  z-index: 5; }
+
+.progressbar-1 {
+  background: #F92672;
+  color: #272822;
   border-radius: 7px;
-  left: 520px;
-  top: 25%;
+  align-items: center;
+  margin-left: -14px;
+  justify-content: flex-start;
+  height: 14px;
+  width: 10%;
+  opacity: 0;
+  transition: transform 3s; }
+
+.progressbar-2 {
+  background: #F92672;
+  color: #272822;
+  border-radius: 7px;
+  align-items: center;
+  margin-left: -14px;
+  justify-content: flex-start;
+  height: 14px;
+  width: 20%;
+  opacity: 0;
+  transition: transform 3s; }
+
+.progressbar-3 {
+  background: #F92672;
+  color: #272822;
+  border-radius: 7px;
+  align-items: center;
+  margin-left: -14px;
+  justify-content: flex-start;
+  height: 14px;
+  width: 30%;
+  opacity: 0;
+  transition: transform 3s; }
+
+.progressbar-4 {
+  background: #F92672;
+  color: #272822;
+  border-radius: 7px;
+  align-items: center;
+  margin-left: -14px;
+  justify-content: flex-start;
+  height: 14px;
+  width: 40%;
+  opacity: 0;
+  transition: transform 3s; }
+
+.progressbar-5 {
+  background: #F92672;
+  color: #272822;
+  border-radius: 7px;
+  align-items: center;
+  margin-left: -14px;
+  justify-content: flex-start;
+  height: 14px;
+  width: 50%;
+  opacity: 0;
+  transition: transform 3s; }
+
+.progressbar-6 {
+  background: #F92672;
+  color: #272822;
+  border-radius: 7px;
+  align-items: center;
+  margin-left: -14px;
+  justify-content: flex-start;
+  height: 14px;
+  width: 60%;
+  opacity: 0;
+  transition: transform 3s; }
+
+.progressbar-7 {
+  background: #F92672;
+  color: #272822;
+  border-radius: 7px;
+  align-items: center;
+  margin-left: -14px;
+  justify-content: flex-start;
+  height: 14px;
+  width: 70%;
+  opacity: 0;
+  transition: transform 3s; }
+
+.progressbar-8 {
+  background: #F92672;
+  color: #272822;
+  border-radius: 7px;
+  align-items: center;
+  margin-left: -14px;
+  justify-content: flex-start;
+  height: 14px;
+  width: 80%;
+  opacity: 0;
+  transition: transform 3s; }
+
+.progressbar-9 {
+  background: #F92672;
+  color: #272822;
+  border-radius: 7px;
+  align-items: center;
+  margin-left: -14px;
+  justify-content: flex-start;
   height: 14px;
   width: 90%;
   opacity: 0;
   transition: transform 3s; }
 
-.skills-set:hover .skill-css {
+.skill-grade {
+  font-family: "Roboto", sans-serif;
+  font-size: 32px;
+  color: #272822;
+  justify-content: flex-end;
+  opacity: 0; }
+
+.skills-set:hover .skill-grade {
+  opacity: 1;
+  transition: opacity 3s; }
+
+.skills-set:hover .progressbar-1 {
+  opacity: 1;
+  transition: opacity 3s; }
+
+.skills-set:hover .progressbar-2 {
+  opacity: 1;
+  transition: opacity 3s; }
+
+.skills-set:hover .progressbar-3 {
+  opacity: 1;
+  transition: opacity 3s; }
+
+.skills-set:hover .progressbar-4 {
+  opacity: 1;
+  transition: opacity 3s; }
+
+.skills-set:hover .progressbar-5 {
+  opacity: 1;
+  transition: opacity 3s; }
+
+.skills-set:hover .progressbar-6 {
+  opacity: 1;
+  transition: opacity 3s; }
+
+.skills-set:hover .progressbar-7 {
+  opacity: 1;
+  transition: opacity 3s; }
+
+.skills-set:hover .progressbar-8 {
+  opacity: 1;
+  transition: opacity 3s; }
+
+.skills-set:hover .progressbar-9 {
   opacity: 1;
   transition: opacity 3s; }
 
