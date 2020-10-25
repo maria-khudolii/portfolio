@@ -49,7 +49,7 @@ header {
 	background: $bg-color;
 	top: 0; 
 	left: 0; 
-	z-index: 50; 
+	z-index: 20; 
 }
 
 .heading-content {
@@ -87,17 +87,39 @@ header {
   bottom: 0;
   left: 160px;
   opacity: 0;
-  transition: 3s;
+  transition: 2s;
 }
 
-date {
+.scroll {
+	position: fixed;
+	font-family: $font;
+	font-size: 16px;
+	color: $text-color;
+	right: 8px;
+	bottom: 40px;
+	transform: rotate(-90deg);
+	transition: font-size 0.5s ease-in;
+	z-index: 50;
+}
+
+.scroll .arrow {
+	margin: 5px;
+	transform: rotate(180deg);
+}
+
+.scroll:hover {
+	font-size: 18px;
+}
+
+.brand-color-text {
 	font-family: $font; 
 	font-style: italic;
 	font-size: 18px;
 	color: $brand-color;
+	margin-bottom: 8px; 
 }
 
-.position {
+.bold-font {
 	font-family: $font; 
 	font-weight: bold;
 	font-size: 32px;
@@ -118,13 +140,18 @@ header:hover .hero {
 
 header:hover .info-text {
 	opacity: 1; 
-	transform: translateY(-150%);
-	transition: transform 5s ease-in 5s, opacity 5s delay 5s;
+	transform: translateY(-100%);
+	transition: transform 5s ease-in 5s, opacity 1s delay 5s;
+}
+
+.info-text-little {
+	display: none;
 }
 
 /*burger-menu*/
 .menu {
 	display: none; 
+	position: fixed;
 }
 
 .btn-burger {
@@ -132,7 +159,7 @@ header:hover .info-text {
   top: 50%;
   left: 0;
   cursor: pointer; 
-  z-index: 50;
+  z-index: 60;
 }
 
 .burger {
@@ -151,6 +178,92 @@ header:hover .info-text {
      left: 8px;
      width: 100%;
      border-top: 5px solid $brand-color;
+}
+
+.menu-open .burger {
+	visibility:hidden;
+}
+
+.menu-open .burger-cross {
+	position: relative;
+	display: block;
+	width: 48px;
+	height: 5px;
+	background: $brand-color;
+	top: 50%;
+  	left: $step;
+  	margin: -24px;
+  	cursor: pointer; 
+  	z-index: 50;
+  	transition: transform 0.5s;
+}
+
+.menu-open .burger-cross:before {
+	content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 48px;
+	height: 5px;
+	background: $brand-color;
+	transition: transform 0.5s;
+}
+
+.menu-open .burger-cross {
+	transform: rotate(45deg);
+}
+
+.menu-open .burger-cross:before {
+	transform: rotate(-90deg);
+}
+
+.menu-open .menu {
+	display: block; 
+	height: 100vh;
+	width: 40%;
+	background: $bg-color;
+	position: fixed; 
+	left: 80px; 
+	z-index: 30;
+	padding: $step;
+	margin-bottom: 80px; 
+	opacity: 0.8;
+	.bold-font {
+		text-decoration: none; 
+	}
+}
+
+.menu-open .menu:hover {
+	opacity: 1;
+	border-right: 5px solid $brand-color;
+}
+
+li {
+	margin-bottom: 32px;
+}
+
+.menu-open .menu-list {
+	margin-bottom: $step;
+}
+
+.menu-open .tel {
+	position: static;
+}
+
+.menu-open .hero {
+	opacity: 0; 
+}
+
+.menu-open .info-text {
+	display: none;
+}
+
+.menu-open .info-text-little {
+	display: block;
+	position: absolute;
+	width: 480px;
+	right: -500px;
+	top: $step;
 }
 
 /*social links*/
@@ -240,7 +353,7 @@ header:hover .info-text {
 	height: 14px;
 	width: 10%;
 	opacity: 0;
-	transition: transform 3s;
+	transition: opacity 3s;
 }
 
 .progressbar-2 {
@@ -253,7 +366,7 @@ header:hover .info-text {
 	height: 14px;
 	width: 20%;
 	opacity: 0;
-	transition: transform 3s;
+	transition: opacity 3s;
 }
 
 .progressbar-3 {
@@ -266,7 +379,7 @@ header:hover .info-text {
 	height: 14px;
 	width: 30%;
 	opacity: 0;
-	transition: transform 3s;
+	transition: opacity 3s;
 }
 
 .progressbar-4 {
@@ -279,7 +392,7 @@ header:hover .info-text {
 	height: 14px;
 	width: 40%;
 	opacity: 0;
-	transition: transform 3s;
+	transition: opacity 3s;
 }
 
 .progressbar-5 {
@@ -292,7 +405,7 @@ header:hover .info-text {
 	height: 14px;
 	width: 50%;
 	opacity: 0;
-	transition: transform 3s;
+	transition: opacity 3s;
 }
 
 .progressbar-6 {
@@ -305,7 +418,7 @@ header:hover .info-text {
 	height: 14px;
 	width: 60%;
 	opacity: 0;
-	transition: transform 3s;
+	transition: opacity 3s;
 }
 
 .progressbar-7 {
@@ -318,7 +431,7 @@ header:hover .info-text {
 	height: 14px;
 	width: 70%;
 	opacity: 0;
-	transition: transform 3s;
+	transition: opacity 3s;
 }
 
 .progressbar-8 {
@@ -331,7 +444,7 @@ header:hover .info-text {
 	height: 14px;
 	width: 80%;
 	opacity: 0;
-	transition: transform 3s;
+	transition: opacity 3s;
 }
 
 .progressbar-9 {
@@ -344,7 +457,7 @@ header:hover .info-text {
 	height: 14px;
 	width: 90%;
 	opacity: 0;
-	transition: transform 3s;
+	transition: opacity 3s;
 }
 
 .skill-grade {
@@ -353,56 +466,156 @@ header:hover .info-text {
 	color: $text-color;
 	justify-content: flex-end;
 	opacity: 0;
+	transition: opacity 3s;
 }
 
 .skills-set:hover .skill-grade {
-	opacity: 1;
-	transition: opacity 3s; 
+  opacity: 1;
 }
 
 .skills-set:hover .progressbar-1 {
-	opacity: 1;
-	transition: opacity 3s; 
+  opacity: 1;
 }
+
 .skills-set:hover .progressbar-2 {
-	opacity: 1;
-	transition: opacity 3s; 
+  opacity: 1;
 }
+
 .skills-set:hover .progressbar-3 {
-	opacity: 1;
-	transition: opacity 3s; 
+  opacity: 1;
 }
+
 .skills-set:hover .progressbar-4 {
-	opacity: 1;
-	transition: opacity 3s; 
+  opacity: 1;
 }
+
 .skills-set:hover .progressbar-5 {
-	opacity: 1;
-	transition: opacity 3s; 
-}
+  opacity: 1;
+ }
+
 .skills-set:hover .progressbar-6 {
-	opacity: 1;
-	transition: opacity 3s; 
+  opacity: 1;
 }
+
 .skills-set:hover .progressbar-7 {
-	opacity: 1;
-	transition: opacity 3s; 
+  opacity: 1;
 }
+
 .skills-set:hover .progressbar-8 {
-	opacity: 1;
-	transition: opacity 3s; 
+  opacity: 1;
 }
+
 .skills-set:hover .progressbar-9 {
-	opacity: 1;
-	transition: opacity 3s; 
+  opacity: 1;
 }
 
+/*projects*/
 
+.projects-img {
+	width: 100%;
+	display: none;
+	position: relative; 
+}
+
+.projects {
+	background: #353535;
+	margin: 80px 0;
+	padding: 80px;
+}
+
+.projects .section-title {
+color: $bg-brand;
+}
+
+.projects .brand-color-text {
+	display: block;
+	margin-bottom: 80px; 
+	transition: font-size 0.3s;
+	line-height: 20px; 
+}
+
+.projects .brand-color-text:hover {
+	font-size: 20px;
+}
+
+.project-name {
+	font-family: $font;
+	font-size: 32px;
+	font-weight: bold;
+	color: $bg-color;
+	margin-bottom: 16px; 
+}
+
+.project-description {
+	font-family: $font;
+	font-size: 32px;
+	color: $bg-content;
+	margin-bottom: 8px; 
+}
+
+/*Experience*/
+.experience {
+	background: $bg-content;
+	margin: 80px 0;
+	padding: 80px;
+}
+
+.experience .bold-font {
+	margin-bottom: 0; 
+}
+
+.job {
+	margin-bottom: 46px;
+}
+
+.certificate-link {
+	font-family: $font; 
+	font-style: italic;
+	text-decoration: underline;
+	font-size: 18px;
+	line-height: 20px; 
+	color: $brand-color;
+	transition: font-size 0.3s;
+}
+
+.certificate-link:hover {
+	font-size: 20px;
+}
+.arrow {
+	margin: 0 10px; 
+	vertical-align: middle;
+}
+
+footer {
+	position: relative;
+}
+.email {
+	text-decoration: none; 
+	padding: 8px 0;
+	transition: font-size 0.3s;
+}
+
+.email:hover {
+	font-size: 35px;
+}
+
+.tel {
+	display: block;
+	position: absolute; 
+	top: 0; 
+	right: 0;
+	font-size: 18px;
+	font-family: $font; 
+	color: $text-color;
+	text-decoration: none;
+	margin-bottom: 40px; 
+}
 
 /*dark-theme*/
 .dark-theme {
 	background: $bg-color-dark;
-	.btn {
+} 
+	.btn{
 		border: 2px solid $brand-color-dark;
 		color: $brand-color-dark;
 	}
@@ -415,5 +628,5 @@ header:hover .info-text {
 	.ua {
 		display: block;
 	}
-}
+
 

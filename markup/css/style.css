@@ -92,7 +92,7 @@ header {
   background: #fff;
   top: 0;
   left: 0;
-  z-index: 50; }
+  z-index: 20; }
 
 .heading-content {
   display: flex;
@@ -127,15 +127,34 @@ header {
   bottom: 0;
   left: 160px;
   opacity: 0;
-  transition: 3s; }
+  transition: 2s; }
 
-date {
+.scroll {
+  position: fixed;
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  color: #272822;
+  right: 8px;
+  bottom: 40px;
+  transform: rotate(-90deg);
+  transition: font-size 0.5s ease-in;
+  z-index: 50; }
+
+.scroll .arrow {
+  margin: 5px;
+  transform: rotate(180deg); }
+
+.scroll:hover {
+  font-size: 18px; }
+
+.brand-color-text {
   font-family: "Roboto", sans-serif;
   font-style: italic;
   font-size: 18px;
-  color: #F92672; }
+  color: #F92672;
+  margin-bottom: 8px; }
 
-.position {
+.bold-font {
   font-family: "Roboto", sans-serif;
   font-weight: bold;
   font-size: 32px;
@@ -153,19 +172,23 @@ header:hover .hero {
 
 header:hover .info-text {
   opacity: 1;
-  transform: translateY(-150%);
-  transition: transform 5s ease-in 5s, opacity 5s delay 5s; }
+  transform: translateY(-100%);
+  transition: transform 5s ease-in 5s, opacity 1s delay 5s; }
+
+.info-text-little {
+  display: none; }
 
 /*burger-menu*/
 .menu {
-  display: none; }
+  display: none;
+  position: fixed; }
 
 .btn-burger {
   position: fixed;
   top: 50%;
   left: 0;
   cursor: pointer;
-  z-index: 50; }
+  z-index: 60; }
 
 .burger {
   position: relative;
@@ -183,6 +206,78 @@ header:hover .info-text {
   left: 8px;
   width: 100%;
   border-top: 5px solid #F92672; }
+
+.menu-open .burger {
+  visibility: hidden; }
+
+.menu-open .burger-cross {
+  position: relative;
+  display: block;
+  width: 48px;
+  height: 5px;
+  background: #F92672;
+  top: 50%;
+  left: 80px;
+  margin: -24px;
+  cursor: pointer;
+  z-index: 50;
+  transition: transform 0.5s; }
+
+.menu-open .burger-cross:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 48px;
+  height: 5px;
+  background: #F92672;
+  transition: transform 0.5s; }
+
+.menu-open .burger-cross {
+  transform: rotate(45deg); }
+
+.menu-open .burger-cross:before {
+  transform: rotate(-90deg); }
+
+.menu-open .menu {
+  display: block;
+  height: 100vh;
+  width: 40%;
+  background: #fff;
+  position: fixed;
+  left: 80px;
+  z-index: 30;
+  padding: 80px;
+  margin-bottom: 80px;
+  opacity: 0.8; }
+  .menu-open .menu .bold-font {
+    text-decoration: none; }
+
+.menu-open .menu:hover {
+  opacity: 1;
+  border-right: 5px solid #F92672; }
+
+li {
+  margin-bottom: 32px; }
+
+.menu-open .menu-list {
+  margin-bottom: 80px; }
+
+.menu-open .tel {
+  position: static; }
+
+.menu-open .hero {
+  opacity: 0; }
+
+.menu-open .info-text {
+  display: none; }
+
+.menu-open .info-text-little {
+  display: block;
+  position: absolute;
+  width: 480px;
+  right: -500px;
+  top: 80px; }
 
 /*social links*/
 .links {
@@ -261,7 +356,7 @@ header:hover .info-text {
   height: 14px;
   width: 10%;
   opacity: 0;
-  transition: transform 3s; }
+  transition: opacity 3s; }
 
 .progressbar-2 {
   background: #F92672;
@@ -273,7 +368,7 @@ header:hover .info-text {
   height: 14px;
   width: 20%;
   opacity: 0;
-  transition: transform 3s; }
+  transition: opacity 3s; }
 
 .progressbar-3 {
   background: #F92672;
@@ -285,7 +380,7 @@ header:hover .info-text {
   height: 14px;
   width: 30%;
   opacity: 0;
-  transition: transform 3s; }
+  transition: opacity 3s; }
 
 .progressbar-4 {
   background: #F92672;
@@ -297,7 +392,7 @@ header:hover .info-text {
   height: 14px;
   width: 40%;
   opacity: 0;
-  transition: transform 3s; }
+  transition: opacity 3s; }
 
 .progressbar-5 {
   background: #F92672;
@@ -309,7 +404,7 @@ header:hover .info-text {
   height: 14px;
   width: 50%;
   opacity: 0;
-  transition: transform 3s; }
+  transition: opacity 3s; }
 
 .progressbar-6 {
   background: #F92672;
@@ -321,7 +416,7 @@ header:hover .info-text {
   height: 14px;
   width: 60%;
   opacity: 0;
-  transition: transform 3s; }
+  transition: opacity 3s; }
 
 .progressbar-7 {
   background: #F92672;
@@ -333,7 +428,7 @@ header:hover .info-text {
   height: 14px;
   width: 70%;
   opacity: 0;
-  transition: transform 3s; }
+  transition: opacity 3s; }
 
 .progressbar-8 {
   background: #F92672;
@@ -345,7 +440,7 @@ header:hover .info-text {
   height: 14px;
   width: 80%;
   opacity: 0;
-  transition: transform 3s; }
+  transition: opacity 3s; }
 
 .progressbar-9 {
   background: #F92672;
@@ -357,64 +452,145 @@ header:hover .info-text {
   height: 14px;
   width: 90%;
   opacity: 0;
-  transition: transform 3s; }
+  transition: opacity 3s; }
 
 .skill-grade {
   font-family: "Roboto", sans-serif;
   font-size: 32px;
   color: #272822;
   justify-content: flex-end;
-  opacity: 0; }
+  opacity: 0;
+  transition: opacity 3s; }
 
 .skills-set:hover .skill-grade {
-  opacity: 1;
-  transition: opacity 3s; }
+  opacity: 1; }
 
 .skills-set:hover .progressbar-1 {
-  opacity: 1;
-  transition: opacity 3s; }
+  opacity: 1; }
 
 .skills-set:hover .progressbar-2 {
-  opacity: 1;
-  transition: opacity 3s; }
+  opacity: 1; }
 
 .skills-set:hover .progressbar-3 {
-  opacity: 1;
-  transition: opacity 3s; }
+  opacity: 1; }
 
 .skills-set:hover .progressbar-4 {
-  opacity: 1;
-  transition: opacity 3s; }
+  opacity: 1; }
 
 .skills-set:hover .progressbar-5 {
-  opacity: 1;
-  transition: opacity 3s; }
+  opacity: 1; }
 
 .skills-set:hover .progressbar-6 {
-  opacity: 1;
-  transition: opacity 3s; }
+  opacity: 1; }
 
 .skills-set:hover .progressbar-7 {
-  opacity: 1;
-  transition: opacity 3s; }
+  opacity: 1; }
 
 .skills-set:hover .progressbar-8 {
-  opacity: 1;
-  transition: opacity 3s; }
+  opacity: 1; }
 
 .skills-set:hover .progressbar-9 {
-  opacity: 1;
-  transition: opacity 3s; }
+  opacity: 1; }
+
+/*projects*/
+.projects-img {
+  width: 100%;
+  display: none;
+  position: relative; }
+
+.projects {
+  background: #353535;
+  margin: 80px 0;
+  padding: 80px; }
+
+.projects .section-title {
+  color: #e6db74; }
+
+.projects .brand-color-text {
+  display: block;
+  margin-bottom: 80px;
+  transition: font-size 0.3s;
+  line-height: 20px; }
+
+.projects .brand-color-text:hover {
+  font-size: 20px; }
+
+.project-name {
+  font-family: "Roboto", sans-serif;
+  font-size: 32px;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 16px; }
+
+.project-description {
+  font-family: "Roboto", sans-serif;
+  font-size: 32px;
+  color: #F5F5F5;
+  margin-bottom: 8px; }
+
+/*Experience*/
+.experience {
+  background: #F5F5F5;
+  margin: 80px 0;
+  padding: 80px; }
+
+.experience .bold-font {
+  margin-bottom: 0; }
+
+.job {
+  margin-bottom: 46px; }
+
+.certificate-link {
+  font-family: "Roboto", sans-serif;
+  font-style: italic;
+  text-decoration: underline;
+  font-size: 18px;
+  line-height: 20px;
+  color: #F92672;
+  transition: font-size 0.3s; }
+
+.certificate-link:hover {
+  font-size: 20px; }
+
+.arrow {
+  margin: 0 10px;
+  vertical-align: middle; }
+
+footer {
+  position: relative; }
+
+.email {
+  text-decoration: none;
+  padding: 8px 0;
+  transition: font-size 0.3s; }
+
+.email:hover {
+  font-size: 35px; }
+
+.tel {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 18px;
+  font-family: "Roboto", sans-serif;
+  color: #272822;
+  text-decoration: none;
+  margin-bottom: 40px; }
 
 /*dark-theme*/
 .dark-theme {
   background: #222629; }
-  .dark-theme .btn {
-    border: 2px solid #87C232;
-    color: #87C232; }
-  .dark-theme .brand {
-    color: #87C232; }
-  .dark-theme .en {
-    display: none; }
-  .dark-theme .ua {
-    display: block; }
+
+.btn {
+  border: 2px solid #87C232;
+  color: #87C232; }
+
+.brand {
+  color: #87C232; }
+
+.en {
+  display: none; }
+
+.ua {
+  display: block; }
