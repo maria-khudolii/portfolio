@@ -98,7 +98,7 @@ header {
 	right: 8px;
 	bottom: 40px;
 	transform: rotate(-90deg);
-	transition: font-size 0.5s ease-in;
+	transition: bottom 0.5s ease-in;
 	z-index: 50;
 }
 
@@ -108,7 +108,7 @@ header {
 }
 
 .scroll:hover {
-	font-size: 18px;
+	bottom: 50px;
 }
 
 .brand-color-text {
@@ -469,43 +469,12 @@ li {
 	transition: opacity 3s;
 }
 
-.skills-set:hover .skill-grade {
-  opacity: 1;
-}
-
-.skills-set:hover .progressbar-1 {
-  opacity: 1;
-}
-
-.skills-set:hover .progressbar-2 {
-  opacity: 1;
-}
-
-.skills-set:hover .progressbar-3 {
-  opacity: 1;
-}
-
-.skills-set:hover .progressbar-4 {
-  opacity: 1;
-}
-
-.skills-set:hover .progressbar-5 {
-  opacity: 1;
- }
-
-.skills-set:hover .progressbar-6 {
-  opacity: 1;
-}
-
-.skills-set:hover .progressbar-7 {
-  opacity: 1;
-}
-
-.skills-set:hover .progressbar-8 {
-  opacity: 1;
-}
-
-.skills-set:hover .progressbar-9 {
+.skills-set:hover .skill-grade, .skills-set:hover .progressbar-1, 
+.skills-set:hover .progressbar-2, .skills-set:hover .progressbar-3, 
+.skills-set:hover .progressbar-4, .skills-set:hover .progressbar-5,
+.skills-set:hover .progressbar-6, .skills-set:hover .progressbar-7, 
+.skills-set:hover .progressbar-8, .skills-set:hover .progressbar-9
+  {
   opacity: 1;
 }
 
@@ -614,7 +583,6 @@ footer {
 /*dark-theme*/
 .dark-theme {
 	background: $bg-color-dark;
-} 
 	.btn{
 		border: 2px solid $brand-color-dark;
 		color: $brand-color-dark;
@@ -628,5 +596,5 @@ footer {
 	.ua {
 		display: block;
 	}
-
+}
 
