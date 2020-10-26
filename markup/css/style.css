@@ -129,24 +129,6 @@ header {
   opacity: 0;
   transition: 2s; }
 
-.scroll {
-  position: fixed;
-  font-family: "Roboto", sans-serif;
-  font-size: 16px;
-  color: #272822;
-  right: 8px;
-  bottom: 40px;
-  transform: rotate(-90deg);
-  transition: bottom 0.5s ease-in;
-  z-index: 50; }
-
-.scroll .arrow {
-  margin: 5px;
-  transform: rotate(180deg); }
-
-.scroll:hover {
-  bottom: 50px; }
-
 .brand-color-text {
   font-family: "Roboto", sans-serif;
   font-style: italic;
@@ -470,11 +452,6 @@ li {
   opacity: 1; }
 
 /*projects*/
-.projects-img {
-  width: 100%;
-  display: none;
-  position: relative; }
-
 .projects {
   background: #353535;
   margin: 80px 0;
@@ -486,11 +463,10 @@ li {
 .projects .brand-color-text {
   display: block;
   margin-bottom: 80px;
-  transition: font-size 0.3s;
-  line-height: 20px; }
+  text-decoration: none; }
 
 .projects .brand-color-text:hover {
-  font-size: 20px; }
+  text-decoration: underline; }
 
 .project-name {
   font-family: "Roboto", sans-serif;
@@ -520,14 +496,13 @@ li {
 .certificate-link {
   font-family: "Roboto", sans-serif;
   font-style: italic;
-  text-decoration: underline;
+  text-decoration: none;
   font-size: 18px;
   line-height: 20px;
-  color: #F92672;
-  transition: font-size 0.3s; }
+  color: #F92672; }
 
 .certificate-link:hover {
-  font-size: 20px; }
+  text-decoration: underline; }
 
 .arrow {
   margin: 0 10px;
@@ -538,11 +513,10 @@ footer {
 
 .email {
   text-decoration: none;
-  padding: 8px 0;
-  transition: font-size 0.3s; }
+  padding: 8px 0; }
 
 .email:hover {
-  font-size: 35px; }
+  text-decoration: underline; }
 
 .tel {
   display: block;
@@ -557,13 +531,72 @@ footer {
 
 /*dark-theme*/
 .dark-theme {
-  background: #222629; }
+  background: #222629;
+  /*burger-menu*/
+  /*social links*/
+  /*parallax image*/
+  /*skills*/ }
   .dark-theme .btn {
     border: 2px solid #87C232;
     color: #87C232; }
   .dark-theme .brand {
     color: #87C232; }
-  .dark-theme .en {
-    display: none; }
-  .dark-theme .ua {
-    display: block; }
+  .dark-theme .heading {
+    background: #222629; }
+  .dark-theme .name {
+    color: #F5F5F5; }
+  .dark-theme header {
+    background: #618930; }
+  .dark-theme .brand-color-text {
+    color: #87C232; }
+  .dark-theme .menu-open header {
+    background: #F5F5F5; }
+  .dark-theme .burger {
+    border-top: 5px solid #87C232;
+    border-bottom: 5px solid #87C232; }
+  .dark-theme .burger:before {
+    border-top: 5px solid #87C232; }
+  .dark-theme .menu-open .burger-cross {
+    background: #87C232; }
+  .dark-theme .menu-open .burger-cross:before {
+    background: #87C232; }
+  .dark-theme .menu-open .menu {
+    background: #618930; }
+  .dark-theme .menu-open .menu:hover {
+    border-right: 5px solid #87C232; }
+  .dark-theme .links * {
+    fill: #87C232; }
+  .dark-theme .parallax {
+    background-image: url(../img/comp_img_dark.jpg); }
+  .dark-theme .progressbar-dot {
+    background: #618930; }
+  .dark-theme .progressbar-1 {
+    background: #618930; }
+  .dark-theme .progressbar-2 {
+    background: #618930; }
+  .dark-theme .progressbar-3 {
+    background: #618930; }
+  .dark-theme .progressbar-4 {
+    background: #618930; }
+  .dark-theme .progressbar-5 {
+    background: #618930; }
+  .dark-theme .progressbar-6 {
+    background: #618930; }
+  .dark-theme .progressbar-7 {
+    background: #618930; }
+  .dark-theme .progressbar-8 {
+    background: #618930; }
+  .dark-theme .progressbar-9 {
+    background: #618930; }
+  .dark-theme .projects {
+    background: #222629; }
+  .dark-theme .projects .section-title {
+    color: #618930; }
+  .dark-theme .arrow * {
+    fill: #87C232; }
+  .dark-theme .certificate-link {
+    color: #87C232; }
+  .dark-theme .email {
+    color: #fff; }
+  .dark-theme footer .arrow * {
+    fill: #fff; }

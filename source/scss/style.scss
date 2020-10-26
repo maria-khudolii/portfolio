@@ -90,27 +90,6 @@ header {
   transition: 2s;
 }
 
-.scroll {
-	position: fixed;
-	font-family: $font;
-	font-size: 16px;
-	color: $text-color;
-	right: 8px;
-	bottom: 40px;
-	transform: rotate(-90deg);
-	transition: bottom 0.5s ease-in;
-	z-index: 50;
-}
-
-.scroll .arrow {
-	margin: 5px;
-	transform: rotate(180deg);
-}
-
-.scroll:hover {
-	bottom: 50px;
-}
-
 .brand-color-text {
 	font-family: $font; 
 	font-style: italic;
@@ -480,12 +459,6 @@ li {
 
 /*projects*/
 
-.projects-img {
-	width: 100%;
-	display: none;
-	position: relative; 
-}
-
 .projects {
 	background: #353535;
 	margin: 80px 0;
@@ -499,12 +472,11 @@ color: $bg-brand;
 .projects .brand-color-text {
 	display: block;
 	margin-bottom: 80px; 
-	transition: font-size 0.3s;
-	line-height: 20px; 
+	text-decoration: none; 
 }
 
 .projects .brand-color-text:hover {
-	font-size: 20px;
+	text-decoration: underline;
 }
 
 .project-name {
@@ -540,15 +512,14 @@ color: $bg-brand;
 .certificate-link {
 	font-family: $font; 
 	font-style: italic;
-	text-decoration: underline;
+	text-decoration: none;
 	font-size: 18px;
 	line-height: 20px; 
 	color: $brand-color;
-	transition: font-size 0.3s;
 }
 
 .certificate-link:hover {
-	font-size: 20px;
+	text-decoration: underline;
 }
 .arrow {
 	margin: 0 10px; 
@@ -561,11 +532,10 @@ footer {
 .email {
 	text-decoration: none; 
 	padding: 8px 0;
-	transition: font-size 0.3s;
 }
 
 .email:hover {
-	font-size: 35px;
+	text-decoration: underline;
 }
 
 .tel {
@@ -590,11 +560,97 @@ footer {
 	.brand {
 		color: $brand-color-dark;
 	}
-	.en {
-		display: none;
+	.heading {
+	background: $bg-color-dark;
 	}
-	.ua {
-		display: block;
+	.name {
+	color: $bg-content;
+	}
+	header {
+	background: $bg-content-dark; 
+	}
+	.brand-color-text {
+	color: $brand-color-dark;
+	}
+	.menu-open header {
+		background: $bg-content;
+	}
+/*burger-menu*/
+	.burger {
+     border-top: 5px solid $brand-color-dark;
+     border-bottom: 5px solid $brand-color-dark;
+	}
+	.burger:before {
+	     border-top: 5px solid $brand-color-dark;
+	}
+	.menu-open .burger-cross {
+		background: $brand-color-dark;
+	}
+	.menu-open .burger-cross:before {
+		background: $brand-color-dark;
+	}
+	.menu-open .menu {
+	background: $bg-content-dark;
+	}
+	.menu-open .menu:hover {
+	border-right: 5px solid $brand-color-dark;
+	}
+	/*social links*/
+	.links * {
+		fill: $brand-color-dark;
+	}
+	/*parallax image*/
+	.parallax {
+	background-image: url(../img/comp_img_dark.jpg);
+	}
+	/*skills*/
+	.progressbar-dot {
+		background: $bg-content-dark;
+	}
+	.progressbar-1 {
+		background: $bg-content-dark;
+	}
+	.progressbar-2 {
+		background: $bg-content-dark;
+	}
+	.progressbar-3 {
+		background: $bg-content-dark;
+	}
+	.progressbar-4 {
+		background: $bg-content-dark;
+	}
+	.progressbar-5 {
+		background: $bg-content-dark;
+	}
+	.progressbar-6 {
+		background: $bg-content-dark;
+	}
+	.progressbar-7 {
+		background: $bg-content-dark;
+	}
+	.progressbar-8 {
+		background: $bg-content-dark;
+	}
+	.progressbar-9 {
+		background: $bg-content-dark;
+	}
+	.projects {
+	background: $bg-color-dark;
+	}
+	.projects .section-title {
+	color: $bg-content-dark;
+	}
+	.arrow * {
+	fill: $brand-color-dark;
+	}
+	.certificate-link {
+	color: $brand-color-dark; 
+	}
+	.email {
+		color: $bg-color;
+	}
+	footer .arrow * {
+		fill: $bg-color;
 	}
 }
 
