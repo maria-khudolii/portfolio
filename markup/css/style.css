@@ -134,6 +134,7 @@ header {
   font-family: "Roboto", sans-serif;
   font-style: italic;
   font-size: 18px;
+  line-height: 21px;
   color: #F92672;
   margin-bottom: 8px; }
 
@@ -141,12 +142,14 @@ header {
   font-family: "Roboto", sans-serif;
   font-weight: bold;
   font-size: 32px;
+  line-height: 35px;
   color: #000;
   margin-bottom: 32px; }
 
 .description {
   font-family: "Roboto", sans-serif;
   font-size: 32px;
+  line-height: 35px;
   color: #272822; }
 
 header:hover .hero {
@@ -156,7 +159,7 @@ header:hover .hero {
 header:hover .info-text {
   opacity: 1;
   transform: translateX(100%);
-  transition: transform 1s ease-out 1s, opacity 1s delay 0.5s; }
+  transition: transform 2s ease-out 2s, opacity 1s delay 1s; }
 
 .info-text-little {
   display: none; }
@@ -164,6 +167,7 @@ header:hover .info-text {
 /*burger-menu*/
 .menu {
   display: none;
+  height: 100vh;
   position: fixed; }
 
 .btn-burger {
@@ -228,8 +232,9 @@ header:hover .info-text {
   width: 40%;
   background: #fff;
   position: fixed;
+  top: 0;
   left: 80px;
-  z-index: 30;
+  z-index: 50;
   padding: 80px;
   margin-bottom: 80px;
   opacity: 0.8; }
@@ -244,10 +249,17 @@ li {
   margin-bottom: 32px; }
 
 .menu-open .menu-list {
+  padding: 80px 0 0;
   margin-bottom: 80px; }
 
 .menu-open .tel {
   position: static; }
+
+.menu-open .email:hover {
+  text-decoration: underline; }
+
+.menu-open .bold-font:hover {
+  text-decoration: underline; }
 
 .menu-open .hero {
   opacity: 0; }
