@@ -84,10 +84,11 @@ header {
 .info-text {
   position: absolute;
   width: 600px;
-  bottom: 0;
-  left: 160px;
+  top: 30%;
+  left: -600px;
+  margin-left: 120px;
   opacity: 0;
-  transition: 2s;
+  transition: 5s;
 }
 
 .brand-color-text {
@@ -113,14 +114,14 @@ header {
 }
 
 header:hover .hero {
-	transform: translate(150%);
-	transition: transform 2s ease-in; 
+	transform: translateY(170%);
+	transition: transform 3s ease-in; 
 }
 
 header:hover .info-text {
 	opacity: 1; 
-	transform: translateY(-100%);
-	transition: transform 5s ease-in 5s, opacity 1s delay 5s;
+	transform: translateX(100%);
+	transition: transform 1s ease-out 1s, opacity 1s delay 0.5s;
 }
 
 .info-text-little {
@@ -462,7 +463,7 @@ li {
 .projects {
 	background: #353535;
 	margin: 80px 0;
-	padding: 80px;
+	padding: 80px 80px 0 80px;
 }
 
 .projects .section-title {
@@ -471,7 +472,8 @@ color: $bg-brand;
 
 .projects .brand-color-text {
 	display: block;
-	margin-bottom: 80px; 
+	margin-bottom: 0; 
+	padding-bottom: 80px; 
 	text-decoration: none; 
 }
 
@@ -636,6 +638,7 @@ footer {
 	}
 	.projects {
 	background: $bg-color-dark;
+	border: 5px solid $bg-content-dark;
 	}
 	.projects .section-title {
 	color: $bg-content-dark;
@@ -651,6 +654,9 @@ footer {
 	}
 	footer .arrow * {
 		fill: $bg-color;
+	}
+	footer .tel {
+		color: $bg-color;
 	}
 }
 
