@@ -229,7 +229,7 @@ header:hover .info-text {
 .menu-open .menu {
   display: block;
   height: 100vh;
-  width: 40%;
+  width: 30%;
   background: #fff;
   position: fixed;
   top: 0;
@@ -271,7 +271,7 @@ li {
   display: block;
   position: absolute;
   width: 480px;
-  right: -500px;
+  right: -400px;
   top: 80px; }
 
 /*social links*/
@@ -464,6 +464,44 @@ li {
 .skills-set:hover .progressbar-8, .skills-set:hover .progressbar-9 {
   opacity: 1; }
 
+.menu-open .section-title {
+  transform: translateX(80%);
+  width: 50%; }
+
+.menu-open .progress {
+  transform: translateX(60%);
+  width: 65%; }
+
+.menu-open .skill-text {
+  min-width: 300px; }
+
+.menu-open .progressbar-1 {
+  width: 10%; }
+
+.menu-open .progressbar-2 {
+  width: 20%; }
+
+.menu-open .progressbar-3 {
+  width: 30%; }
+
+.menu-open .progressbar-4 {
+  width: 40%; }
+
+.menu-open .progressbar-5 {
+  width: 50%; }
+
+.menu-open .progressbar-6 {
+  width: 60%; }
+
+.menu-open .progressbar-7 {
+  width: 70%; }
+
+.menu-open .progressbar-8 {
+  width: 80%; }
+
+.menu-open .progressbar-9 {
+  width: 90%; }
+
 /*projects*/
 .projects {
   background: #353535;
@@ -495,6 +533,16 @@ li {
   color: #F5F5F5;
   margin-bottom: 8px; }
 
+.menu-open .projects .brand-color-text {
+  transform: translateX(40%); }
+
+.menu-open .project-name {
+  transform: translateX(40%); }
+
+.menu-open .project-description {
+  transform: translateX(80%);
+  width: 50%; }
+
 /*Experience*/
 .experience {
   background: #F5F5F5;
@@ -522,8 +570,20 @@ li {
   margin: 0 10px;
   vertical-align: middle; }
 
+.menu-open .job {
+  transform: translateX(40%); }
+
+.menu-open .job .bold-font:hover {
+  text-decoration: none; }
+
+.menu-open .certificate {
+  transform: translateX(40%); }
+
 footer {
   position: relative; }
+
+.menu-open footer {
+  display: none; }
 
 .email {
   text-decoration: none;

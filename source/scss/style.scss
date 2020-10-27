@@ -204,7 +204,7 @@ header:hover .info-text {
 .menu-open .menu {
 	display: block;
 	height: 100vh;
-	width: 40%;
+	width: 30%;
 	background: $bg-color;
 	position: fixed; 
 	top: 0; 
@@ -256,7 +256,7 @@ li {
 	display: block;
 	position: absolute;
 	width: 480px;
-	right: -500px;
+	right: -400px;
 	top: $step;
 }
 
@@ -321,6 +321,7 @@ li {
 	display: flex; 
 	width: 100%;
 }
+
 
 .progressbar {
 	display: flex;
@@ -472,6 +473,57 @@ li {
   opacity: 1;
 }
 
+
+.menu-open .section-title {
+	transform: translateX(80%);
+	width: 50%;
+}
+
+.menu-open .progress {
+	transform: translateX(60%);
+	width: 65%;
+}
+.menu-open .skill-text { 
+	min-width: 300px;
+}
+.menu-open .progressbar-1 {
+	width: 10%;
+}
+
+.menu-open .progressbar-2 {
+	width: 20%;
+}
+
+.menu-open .progressbar-3 {
+	width: 30%;
+}
+
+.menu-open .progressbar-4 {
+	width: 40%;
+}
+
+.menu-open .progressbar-5 {
+	width: 50%;
+}
+
+.menu-open .progressbar-6 {
+	width: 60%;
+}
+
+.menu-open .progressbar-7 {
+	width: 70%;
+}
+
+.menu-open .progressbar-8 {
+	width: 80%;
+}
+
+.menu-open .progressbar-9 {
+	width: 90%;
+}
+
+.menu-open .skill-grade {
+}
 /*projects*/
 
 .projects {
@@ -510,6 +562,20 @@ color: $bg-brand;
 	margin-bottom: 8px; 
 }
 
+.menu-open .projects .brand-color-text {
+	transform: translateX(40%);
+}
+
+.menu-open .project-name {
+	transform: translateX(40%);
+}
+
+.menu-open .project-description {
+	transform: translateX(80%); 
+	width: 50%;
+}
+
+
 /*Experience*/
 .experience {
 	background: $bg-content;
@@ -542,9 +608,26 @@ color: $bg-brand;
 	vertical-align: middle;
 }
 
+.menu-open .job {
+	transform: translateX(40%);
+}
+
+.menu-open .job .bold-font:hover {
+	text-decoration: none;
+}
+
+.menu-open .certificate {
+	transform: translateX(40%);
+}
+
 footer {
 	position: relative;
 }
+
+.menu-open footer {
+	display: none;
+}
+
 .email {
 	text-decoration: none; 
 	padding: 8px 0;
